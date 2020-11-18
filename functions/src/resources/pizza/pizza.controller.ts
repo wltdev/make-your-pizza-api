@@ -26,3 +26,23 @@ export const getToppings = async (req: Request, res: Response) => {
     res.status(INTERNAL_SERVER_ERROR).send({ response: error.message })
   }
 }
+
+/**
+ * Get Pizza configs
+ * @param req 
+ * @param res 
+ */
+export const getConfigs = async (req: Request, res: Response) => {
+  try {   
+
+    const doc = await db.collection('config').doc('1').get()
+
+    const config = {
+      ...doc.data()
+    }
+
+    res.send(config)
+  } catch (error) {    
+    res.status(INTERNAL_SERVER_ERROR).send({ response: error.message })
+  }
+}

@@ -12,7 +12,7 @@
     "local": "firebase use make-your-pizza-app && firebase emulators:start --only functions"
   },
   "engines": {
-    "node": "10"
+    "node": "8"
   },
   "main": "lib/index.js",
   "dependencies": {
